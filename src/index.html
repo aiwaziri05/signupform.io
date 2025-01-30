@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Link to Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+		<!-- Fontawersome icons CDN link -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+			integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<!-- Link to custom CSS stylesheet -->
+		<link rel="stylesheet" href="./assets/css/styles.css" />
+		<title>Signup Form</title>
+	</head>
+	<body>
+		<aside class="sidebar">
+			<a href="#" class="logo-mobile">
+				<img src="./assets/svg/logo.svg" alt="the odin project logo" />
+				<span>The Odin Project</span>
+			</a>
+			<div>
+				<img src="./assets/svg/sidebar-bg.svg" alt="sidebar images" />
+			</div>
+			<a href="#form-section" id="main">
+				<span> Scroll down </span>
+				<i class="fa-solid fa-circle-chevron-down"></i>
+			</a>
+		</aside>
+		<section class="main" id="form-section">
+			<div class="form-primary__header">
+				<a href="#" class="logo">
+					<img src="./assets/svg/logo.svg" alt="the odin project logo" />
+					<span>The Odin Project</span>
+				</a>
+				<h1>Sign Up</h1>
+				<div class="signup-option">
+					<a href="#">
+						<img src="./assets/svg/google.svg" alt="google icon" />
+						<span>Google</span>
+					</a>
+					<a href="#">
+						<img src="./assets/svg/github.svg" alt="github icon" />
+						<span>Github</span>
+					</a>
+				</div>
+				<p>&HorizontalLine; <span>0R</span> &HorizontalLine;</p>
+			</div>
+			<form class="signup-form">
+				<fieldset>
+					<div>
+						<div class="input-field">
+							<label for="first-name">First Name <span aria-label="required">*</span></label>
+							<input type="text" name="first_name" class="form-control" id="first-name" placeholder="enter your first name" required />
+						</div>
+						<div class="input-field">
+							<label for="last-name">Last Name <span aria-label="required">*</span></label>
+							<input type="text" name="last_name" class="form-control" id="last-name" placeholder="enter your last name" required />
+						</div>
+					</div>
+				</fieldset>
+				<div class="input-field">
+					<label for="email">Email <span aria-label="required">*</span></label>
+					<input type="email" name="email" id="email" placeholder="enter email address" required />
+				</div>
+				<div class="input-field">
+					<label for="password">Password <span aria-label="required">*</span></label>
+					<input type="password" name="password" id="password" placeholder="enter password" minlength="4" maxlength="8" required />
+					<button type="button" class="icon"><i class="fa-regular fa-eye-slash"></i></button>
+				</div>
+				<div class="input-field">
+					<label for="repeat-password">Repeat Password <span aria-label="required">*</span></label>
+					<input type="password" name="repeat-password" id="repeat-password" placeholder="enter password" minlength="4" maxlength="8" required />
+					<button type="button" class="icon"><i class="fa-regular fa-eye-slash"></i></button>
+				</div>
+				<button type="submit" class="signup-btn">Signup</button>
+			</form>
+			<p>By clicking signup you agree to our <a href="#">Terms & Conditions</a>, <a href="#">Policy Privacy.</a></p>
+			<p>Already have an account? <a href="#">Login</a></p>
+		</section>
+		<script src="./assets/js/script.js"></script>
+	</body>
+</html>
