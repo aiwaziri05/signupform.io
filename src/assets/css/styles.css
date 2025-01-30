@@ -17,7 +17,23 @@
 	--error-clr: #b80d0d;
 	--clr-valid: #19a811;
 	--white-clr: hsl(0, 0%, 100%);
-	--theme-name: 'light-theme';
+	--theme-name: 'light';
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background-clr: hsl(252, 19%, 12%);
+		--primary-clr: hsl(35, 100%, 45%);
+		--text-clr: hsl(0, 0%, 85%);
+		--clr-darkpurple: hsl(313, 18%, 50%);
+		--clr-very-light-purple: hsl(247, 22%, 61%);
+		--clr-very-light-gray: hsl(247, 23%, 30%);
+		--light-gray: hsl(250, 18%, 25%);
+		--error-clr: #e63946;
+		--clr-valid: #1dd75e;
+		--white-clr: hsl(0, 0%, 90%);
+		--theme-name: 'dark';
+	}
 }
 
 @font-face {
@@ -37,6 +53,7 @@ body {
 	color: var(--text-clr);
 	display: grid;
 	grid-template-columns: auto 1fr;
+	transition: all 200ms ease-in-out;
 }
 
 img {
@@ -158,6 +175,57 @@ button {
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
+}
+
+.form-primary__header > div:first-of-type {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.form-primary__header #toggle-theme {
+	display: block;
+	width: 40px;
+	height: 20px;
+	border: 2px solid var(--clr-very-light-purple);
+	border-radius: 2em;
+	position: relative;
+	cursor: pointer;
+}
+
+.form-primary__header .switch {
+	display: flex;
+	gap: 10px;
+}
+
+.switch span {
+	text-transform: capitalize;
+	font-size: 0.85rem;
+	font-weight: 400;
+}
+
+.switch span::before {
+	content: var(--theme-name);
+}
+
+.form-primary__header #toggle-theme::before {
+	content: '';
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background-color: var(--white-clr);
+	display: block;
+	margin: 2px 3px;
+	transition: all 0.4s ease;
+}
+
+.form-primary__header #toggle-theme:checked {
+	background-color: var(--clr-very-light-purple);
+}
+
+.form-primary__header #toggle-theme:checked::before {
+	transform: translateX(16px);
 }
 
 .signup-option a {
