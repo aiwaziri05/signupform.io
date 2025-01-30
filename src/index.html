@@ -7,7 +7,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
-		<!-- Fontawersome icons CDN link -->
+		<!-- Font Awesome icons CDN link -->
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -21,68 +21,67 @@
 	<body>
 		<aside class="sidebar">
 			<a href="#" class="logo-mobile">
-				<img src="./assets/svg/logo.svg" alt="the odin project logo" />
+				<img src="./assets/svg/logo.svg" alt="The Odin Project logo" />
 				<span>The Odin Project</span>
 			</a>
 			<div>
-				<img src="./assets/svg/sidebar-bg.svg" alt="sidebar images" />
+				<img src="./assets/svg/sidebar-bg.svg" alt="Sidebar images" />
 			</div>
 			<a href="#form-section" id="main">
-				<span> Scroll down </span>
+				<span>Scroll down</span>
 				<i class="fa-solid fa-circle-chevron-down"></i>
 			</a>
 		</aside>
-		<section class="main" id="form-section">
-			<div class="form-primary__header">
+		<main class="main" id="form-section">
+			<header class="form-primary__header">
 				<a href="#" class="logo">
-					<img src="./assets/svg/logo.svg" alt="the odin project logo" />
+					<img src="./assets/svg/logo.svg" alt="The Odin Project logo" />
 					<span>The Odin Project</span>
 				</a>
 				<h1>Sign Up</h1>
 				<div class="signup-option">
 					<a href="#">
-						<img src="./assets/svg/google.svg" alt="google icon" />
+						<img src="./assets/svg/google.svg" alt="Google icon" />
 						<span>Google</span>
 					</a>
 					<a href="#">
-						<img src="./assets/svg/github.svg" alt="github icon" />
-						<span>Github</span>
+						<img src="./assets/svg/github.svg" alt="GitHub icon" />
+						<span>GitHub</span>
 					</a>
 				</div>
-				<p>&HorizontalLine; <span>0R</span> &HorizontalLine;</p>
-			</div>
-			<form class="signup-form">
+				<p>&HorizontalLine; <span>OR</span> &HorizontalLine;</p>
+			</header>
+			<form class="signup-form" aria-labelledby="signup-form">
 				<fieldset>
-					<div>
-						<div class="input-field">
-							<label for="first-name">First Name <span aria-label="required">*</span></label>
-							<input type="text" name="first_name" class="form-control" id="first-name" placeholder="enter your first name" required />
-						</div>
-						<div class="input-field">
-							<label for="last-name">Last Name <span aria-label="required">*</span></label>
-							<input type="text" name="last_name" class="form-control" id="last-name" placeholder="enter your last name" required />
-						</div>
+					<legend>Personal Information</legend>
+					<div class="input-field">
+						<label for="first-name">First Name <span aria-label="required">*</span></label>
+						<input type="text" name="first_name" class="form-control" id="first-name" placeholder="Enter first name" required />
+					</div>
+					<div class="input-field">
+						<label for="last-name">Last Name <span aria-label="required">*</span></label>
+						<input type="text" name="last_name" class="form-control" id="last-name" placeholder="Enter last name" required />
 					</div>
 				</fieldset>
 				<div class="input-field">
 					<label for="email">Email <span aria-label="required">*</span></label>
-					<input type="email" name="email" id="email" placeholder="enter email address" required />
+					<input type="email" name="email" id="email" placeholder="Enter email address" required />
 				</div>
 				<div class="input-field">
 					<label for="password">Password <span aria-label="required">*</span></label>
-					<input type="password" name="password" id="password" placeholder="enter password" minlength="4" maxlength="8" required />
-					<button type="button" class="icon"><i class="fa-regular fa-eye-slash"></i></button>
+					<input type="password" name="password" id="password" placeholder="Enter password" minlength="8" required autocomplete="new-password" />
+					<button type="button" class="icon" aria-label="Toggle password visibility"><i class="fa-regular fa-eye-slash"></i></button>
 				</div>
 				<div class="input-field">
 					<label for="repeat-password">Repeat Password <span aria-label="required">*</span></label>
-					<input type="password" name="repeat-password" id="repeat-password" placeholder="enter password" minlength="4" maxlength="8" required />
-					<button type="button" class="icon"><i class="fa-regular fa-eye-slash"></i></button>
+					<input type="password" name="repeat-password" id="repeat-password" placeholder="Repeat password" minlength="8" required autocomplete="new-password" />
+					<button type="button" class="icon" aria-label="Toggle password visibility"><i class="fa-regular fa-eye-slash"></i></button>
 				</div>
 				<button type="submit" class="signup-btn">Signup</button>
 			</form>
-			<p>By clicking signup you agree to our <a href="#">Terms & Conditions</a>, <a href="#">Policy Privacy.</a></p>
+			<p>By clicking signup you agree to our <a href="#">Terms & Conditions</a>, <a href="#">Privacy Policy</a>.</p>
 			<p>Already have an account? <a href="#">Login</a></p>
-		</section>
-		<script src="./assets/js/script.js"></script>
+		</main>
+		<script src="./assets/js/script.js" defer></script>
 	</body>
 </html>

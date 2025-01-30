@@ -17,6 +17,7 @@
 	--error-clr: #b80d0d;
 	--clr-valid: #19a811;
 	--white-clr: hsl(0, 0%, 100%);
+	--theme-name: 'light-theme';
 }
 
 @font-face {
@@ -32,7 +33,6 @@ html {
 
 body {
 	min-height: 100vh;
-	min-height: 100dvh;
 	background-color: var(--background-clr);
 	color: var(--text-clr);
 	display: grid;
@@ -41,7 +41,7 @@ body {
 
 img {
 	display: block;
-	max-inline-size: 100%;
+	max-width: 100%;
 	height: auto;
 }
 
@@ -53,10 +53,9 @@ a {
 h1,
 h2,
 h3 {
-	margin: 0;
+	margin: 0 0 12px;
 	font-size: inherit;
 	font-weight: inherit;
-	margin-bottom: 12px;
 }
 
 p {
@@ -74,6 +73,12 @@ form button {
 	border: 0;
 }
 
+fieldset legend {
+	margin-bottom: 0.5rem;
+	padding-bottom: 0.5rem;
+	font-size: 1.25rem;
+}
+
 input,
 button {
 	background: transparent;
@@ -89,7 +94,6 @@ button {
 	padding: 0.75rem;
 	position: sticky;
 	top: 0;
-	align-self: top;
 }
 
 .sidebar .logo-mobile,
@@ -102,7 +106,6 @@ button {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-self: center;
 }
 
 .sidebar > div img {
@@ -124,7 +127,7 @@ button {
 }
 
 .main .form-primary__header {
-	margin-block-end: 0.75rem;
+	margin-bottom: 0.75rem;
 }
 
 .form-primary__header .logo {
@@ -145,7 +148,7 @@ button {
 }
 
 .form-primary__header h1 {
-	margin-block: 1.25rem;
+	margin: 1.25rem 0;
 	color: var(--primary-clr);
 	font-size: clamp(2rem, 2vw, 2.2rem);
 	font-weight: 800;
@@ -164,13 +167,13 @@ button {
 	gap: 0.5em;
 	padding: 0.45em 2.5em;
 	border-radius: 0.5em;
-	color: var(--text-clr), currentColor;
+	color: var(--text-clr);
 	transition: all 0.4s ease;
 }
 
 .signup-option a:hover {
 	background-color: var(--clr-very-light-purple);
-	color: var(--white-clr, currentColor);
+	color: var(--white-clr);
 }
 
 .signup-option a img {
@@ -199,7 +202,7 @@ fieldset > div .input-field {
 
 .signup-form .input-field {
 	position: relative;
-	margin-block-end: 1.125rem;
+	margin-bottom: 1.125rem;
 }
 
 .input-field > input {
@@ -215,8 +218,8 @@ fieldset > div .input-field {
 	position: absolute;
 	top: 0;
 	left: 0;
-	transform: translateX(10px) translateY(-8px);
-	padding-inline: 0.25em 0.75rem;
+	transform: translate(10px, -8px);
+	padding: 0 0.75rem;
 	background-color: var(--background-clr);
 	transition: all 0.4s ease;
 }
@@ -225,7 +228,7 @@ fieldset > div .input-field {
 	position: absolute;
 	top: 50%;
 	right: 0;
-	transform: translateY(-50%) translateX(-12px);
+	transform: translate(-12px, -50%);
 	cursor: pointer;
 	transition: all 200ms ease;
 }
@@ -243,15 +246,16 @@ fieldset > div .input-field {
 	cursor: pointer;
 }
 
-.input-field input:user-valid {
+.input-field input:valid {
 	border-color: var(--clr-valid);
 }
 
-.input-field input:user-invalid {
+.input-field input:invalid {
 	border-color: var(--error-clr);
 }
 
-.input-field:has(:hover, :focus) input {
+.input-field:hover input,
+.input-field:focus-within input {
 	border-color: var(--primary-clr);
 }
 
@@ -269,10 +273,10 @@ fieldset > div .input-field {
 
 .signup-form ~ p > a {
 	font-size: 100%;
+}
 
-	&:hover {
-		text-decoration: underline;
-	}
+.signup-form ~ p > a:hover {
+	text-decoration: underline;
 }
 
 .form-primary__header h1,
@@ -290,7 +294,6 @@ fieldset > div .input-field {
 	}
 
 	.sidebar {
-		all: reset;
 		display: none;
 	}
 
@@ -302,17 +305,17 @@ fieldset > div .input-field {
 	.sidebar .logo-mobile {
 		align-items: center;
 		gap: 5px;
+	}
 
-		img {
-			height: 2.5rem;
-		}
+	.sidebar .logo-mobile img {
+		height: 2.5rem;
+	}
 
-		span {
-			color: var(--white-clr);
-			font-family: Norse-Bold;
-			font-size: 1.125rem;
-			font-weight: 700;
-		}
+	.sidebar .logo-mobile span {
+		color: var(--white-clr);
+		font-family: Norse-Bold;
+		font-size: 1.125rem;
+		font-weight: 700;
 	}
 
 	.main {
@@ -327,16 +330,11 @@ fieldset > div .input-field {
 	fieldset > div .input-field {
 		flex: 0 0 100%;
 	}
-}
 
-@media (max-width: 500px) {
 	.form-primary__header .signup-option {
 		flex-wrap: wrap;
-		gap: 10px;
-	}
-
-	.signup-option a {
-		flex-basis: 100%;
+		gap: 20px;
+		justify-content: center;
 	}
 
 	.signup-form button[type='submit'] {
@@ -365,5 +363,12 @@ fieldset > div .input-field {
 
 	.form-primary__header .logo {
 		justify-content: center;
+	}
+}
+
+@media (max-width: 500px) {
+	.signup-form ~ p {
+		max-inline-size: 60%;
+		margin-inline: auto;
 	}
 }
